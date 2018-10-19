@@ -1,8 +1,8 @@
 # MS-Band-Android
 
-#Microsoft Band API For Anrdoid
+## Microsoft Band API For Anrdoid
 
-##Preparation
+## Preparation
 
 To make sure the Microsoft Band is connected to your phone, download the [Microsoft Band](https://play.google.com/store/apps/details?id=com.microsoft.kapp) and connect it in the app, also keep the bluetooth on.
 
