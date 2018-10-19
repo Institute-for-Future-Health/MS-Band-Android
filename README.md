@@ -7,9 +7,9 @@
 To make sure the Microsoft Band is connected to your phone, download the [Microsoft Band](https://play.google.com/store/apps/details?id=com.microsoft.kapp) and connect it in the app, also keep the bluetooth on.
 
 
-##Code
+## Code
 
-###Connect
+### Connect
 
 ```Java
     private boolean getConnectBand() throws BandException, InterruptedException {
@@ -29,7 +29,7 @@ To make sure the Microsoft Band is connected to your phone, download the [Micros
 
 ```
 
-###Consent
+### Consent
 
 Function for consenting reading heartrate.
 
@@ -87,7 +87,7 @@ In your onclick() event, call HeartRateConsentTask.execute().
 
 There will be a pop window asking for Yes or No, click yes to consent.
 
-###Reading Heartrate
+### Reading Heartrate
 
 ```Java
     private class HeartRateSubscriptionTask extends AsyncTask<Void, Void, Void> {
