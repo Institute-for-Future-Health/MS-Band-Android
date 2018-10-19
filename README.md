@@ -11,7 +11,7 @@ To make sure the Microsoft Band is connected to your phone, download the [Micros
 
 ###Connect
 
-<code>
+```Java
     private boolean getConnectBand() throws BandException, InterruptedException {
         if(client == null){
             BandInfo[] devices = BandClientManager.getInstance().getPairedBands();
@@ -27,14 +27,13 @@ To make sure the Microsoft Band is connected to your phone, download the [Micros
         return ConnectionState.CONNECTED == client.connect().await();
     }
 
-</code>
+```
 
 ###Consent
 
 Function for consenting reading heartrate.
 
-<pre>
-<code>
+```Java
  private class HeartRateConsentTask extends AsyncTask<WeakReference<Activity>, Void, Void> {
 
         @Override
@@ -63,14 +62,12 @@ Function for consenting reading heartrate.
             return null;
         }
     }
-
-
-</code>
-</pre>
+```
 
 In your onclick() event, call HeartRateConsentTask.execute().
 
-<code>
+
+```Java
 @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,14 +82,14 @@ In your onclick() event, call HeartRateConsentTask.execute().
             }
         });
     }
-        
-</code>
+      
+```
 
 There will be a pop window asking for Yes or No, click yes to consent.
 
 ###Reading Heartrate
 
-<code>
+```Java
     private class HeartRateSubscriptionTask extends AsyncTask<Void, Void, Void> {
         @Override
         protected Void doInBackground(Void... voids) {
@@ -112,12 +109,12 @@ There will be a pop window asking for Yes or No, click yes to consent.
             return null;
         }
     }
-</code>
+```
 
 And in your event for start listening, call HeartRateSubscriptionTask:
 
-<code>
-        private HeartRateSubscriptionTask mHeartRateSubscriptionTask;
+```Java
+private HeartRateSubscriptionTask mHeartRateSubscriptionTask;
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,13 +123,12 @@ And in your event for start listening, call HeartRateSubscriptionTask:
                 mHeartRateSubscriptionTask.execute();
             }
         });
-</code>
-
+```
 
 Define a BandHeartRateEventListener to keep reading the heartrate values.
 
-<code>
-    private BandHeartRateEventListener bandHeartRateEventListener = new BandHeartRateEventListener() {
+```Java
+private BandHeartRateEventListener bandHeartRateEventListener = new BandHeartRateEventListener() {
         @Override
         public void onBandHeartRateChanged(BandHeartRateEvent bandHeartRateEvent) {
             if(bandHeartRateEvent != null){
@@ -140,4 +136,4 @@ Define a BandHeartRateEventListener to keep reading the heartrate values.
             }
         }
     };
-</code>
+```
