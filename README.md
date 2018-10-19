@@ -1,6 +1,5 @@
-# MS-Band-Android
 
-## Microsoft Band API For Anrdoid
+# Microsoft Band API For Anrdoid
 
 ## Preparation
 
