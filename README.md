@@ -10,7 +10,6 @@ To make sure the Microsoft Band is connected to your phone, download the [Micros
 ## Code
 
 ### Connect
-
 ```Java
     private boolean getConnectBand() throws BandException, InterruptedException {
         if(client == null){
@@ -32,7 +31,6 @@ To make sure the Microsoft Band is connected to your phone, download the [Micros
 ### Consent
 
 Function for consenting reading heartrate.
-
 ```Java
  private class HeartRateConsentTask extends AsyncTask<WeakReference<Activity>, Void, Void> {
 
@@ -65,8 +63,6 @@ Function for consenting reading heartrate.
 ```
 
 In your onclick() event, call HeartRateConsentTask.execute().
-
-
 ```Java
 @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -89,6 +85,7 @@ There will be a pop window asking for Yes or No, click yes to consent.
 
 ### Reading Heartrate
 
+Define HeartRateSubscriptionTask to assign the job.
 ```Java
     private class HeartRateSubscriptionTask extends AsyncTask<Void, Void, Void> {
         @Override
@@ -112,7 +109,6 @@ There will be a pop window asking for Yes or No, click yes to consent.
 ```
 
 And in your event for start listening, call HeartRateSubscriptionTask:
-
 ```Java
 private HeartRateSubscriptionTask mHeartRateSubscriptionTask;
 
@@ -126,7 +122,6 @@ private HeartRateSubscriptionTask mHeartRateSubscriptionTask;
 ```
 
 Define a BandHeartRateEventListener to keep reading the heartrate values.
-
 ```Java
 private BandHeartRateEventListener bandHeartRateEventListener = new BandHeartRateEventListener() {
         @Override
