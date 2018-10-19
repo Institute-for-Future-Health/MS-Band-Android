@@ -32,6 +32,7 @@ To make sure the Microsoft Band is connected to your phone, download the [Micros
 ###Consent
 
 Function for consenting reading heartrate.
+
 <code>
  private class HeartRateConsentTask extends AsyncTask<WeakReference<Activity>, Void, Void> {
 
@@ -65,7 +66,8 @@ Function for consenting reading heartrate.
 
 </code>
 
-In your onclick() event, call HeartRateConsentTask.execute()
+In your onclick() event, call HeartRateConsentTask.execute().
+
 <code>
 @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -85,7 +87,6 @@ In your onclick() event, call HeartRateConsentTask.execute()
 </code>
 
 There will be a pop window asking for Yes or No, click yes to consent.
-
 
 ###Reading Heartrate
 
@@ -112,6 +113,7 @@ There will be a pop window asking for Yes or No, click yes to consent.
 </code>
 
 And in your event for start listening, call HeartRateSubscriptionTask:
+
 <code>
         private HeartRateSubscriptionTask mHeartRateSubscriptionTask;
 
